@@ -16,11 +16,27 @@
             operation = Console.ReadLine()
         End While
 
-        'Get the min and max values for randomization
+        'Get the min and max values for randomization and assure
+        'input is a number
         Console.Write("Minimum Number: ")
-        min = CInt(Console.ReadLine())
+
+        While Not (TypeOf min Is Integer)
+            Try
+                min = CInt(Console.ReadLine())
+            Catch ex As Exception
+                Console.Write("Must be a number: ")
+            End Try
+        End While
+
         Console.Write("Maximum Number: ")
-        max = CInt(Console.ReadLine())
+
+        While Not (TypeOf max Is Integer)
+            Try
+                max = CInt(Console.ReadLine())
+            Catch ex As Exception
+                Console.Write("Must be a number: ")
+            End Try
+        End While
 
         Console.WriteLine()
 
